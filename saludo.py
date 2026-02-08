@@ -1,8 +1,18 @@
-# Pedimos el nombre al usuario
-nombre = input("¿Cómo te llamas? ")
+from datetime import datetime
 
-# Corregimos el saludo: quitamos espacios y ponemos la primera letra en mayúscula
-nombre_corregido = nombre.strip().capitalize()
+# 1. Obtenemos la hora actual del sistema
+hora = datetime.now().hour
 
-# Mostramos el resultado final
-print(f"¡Hola, {nombre_corregido}! Es un gusto saludarte.")
+# 2. Definimos el saludo según el momento del día
+if 5 <= hora < 12:
+    momento = "Buenos días"
+elif 12 <= hora < 20:
+    momento = "Buenas tardes"
+else:
+    momento = "Buenas noches"
+
+# 3. Pedimos el nombre y lo corregimos (limpieza de espacios y mayúsculas)
+nombre = input("Dime tu nombre: ").strip().title()
+
+# 4. Resultado final elegante
+print(f"¡{momento}, {nombre}! Qué alegría verte por aquí.")
